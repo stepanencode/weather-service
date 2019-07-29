@@ -13,15 +13,27 @@ import Header from './shared/Header/Header';
 const App = () => {
     return (
         <div>
-            <Header />
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={LogIn}/>
                     <Route path="/sign_up" exact component={SignUp} />
-                    <Route path="/edit_profile" exact component={EditProfile} />
-                    <Route path="/history_list" exact component={RequestHistoryList} />
-                    <Route path="/history_details" exact component={RequestHistoryDetails} />
-                    <Route path="/weather" exact component={WeatherPage} />
+
+                    <Route path="/edit_profile" exact >
+                        <Route component={Header}/>
+                        <Route component={EditProfile}/>
+                    </Route>
+                    <Route path="/history_list" exact>
+                        <Route component={Header}/>
+                        <Route component={RequestHistoryList} />
+                    </Route>
+                    <Route path="/history_details" exact >
+                        <Route component={Header}/>
+                        <Route component={RequestHistoryDetails} />
+                    </Route>
+                    <Route path="/weather" exact >
+                        <Route component={Header}/>
+                        <Route component={WeatherPage} />
+                    </Route>
                 </Switch>
             </BrowserRouter>
         </div>

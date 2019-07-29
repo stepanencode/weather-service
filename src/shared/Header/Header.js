@@ -3,31 +3,26 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
-import { Button } from 'reactstrap';
+ } from 'reactstrap';
+
+import ButtonLogOut from "../Buttons/ButtonLogOut";
 
 
-export default class Header extends React.Component {
-    constructor(props) {
-        super(props);
+class Header extends React.Component {
+    state = { isOpen: false  };
 
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
+    componentDidMount() {
+        this.toggle();
+    }
+
+    toggle = () => {
+            this.setState({
+                isOpen: !this.state.isOpen
+            });
         };
-    }
-    toggle () {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
 
     render() {
         return (
@@ -55,7 +50,7 @@ export default class Header extends React.Component {
                                 <NavLink href="/history_details">History Details</NavLink>
                             </NavItem>
                             <NavItem className="m-auto">
-                                <NavLink href="/"><Button color="danger">LogOut</Button></NavLink>
+                                <NavLink href="/"><ButtonLogOut /></NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
@@ -64,4 +59,6 @@ export default class Header extends React.Component {
         );
     }
 }
+
+export default Header;
 
