@@ -11,6 +11,8 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+import { Button } from 'reactstrap';
+
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -21,42 +23,40 @@ export default class Header extends React.Component {
             isOpen: false
         };
     }
-    toggle() {
+    toggle () {
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
+
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <Navbar color="light" light expand="md" >
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                        <Nav className="ml-auto" navbar >
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/">LogIn</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/sign_up">SignUp</NavLink>
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Options
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/edit_profile">Edit Profile</NavLink>
+                            </NavItem>
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/weather">Weather Page</NavLink>
+                            </NavItem>
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/history_list">History List</NavLink>
+                            </NavItem>
+                            <NavItem className="mt-2 m-auto">
+                                <NavLink href="/history_details">History Details</NavLink>
+                            </NavItem>
+                            <NavItem className="m-auto">
+                                <NavLink href="/"><Button color="danger">LogOut</Button></NavLink>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>

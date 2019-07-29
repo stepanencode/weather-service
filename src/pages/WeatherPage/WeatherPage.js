@@ -1,11 +1,11 @@
 import React from  'react';
 
-const EditProfile = () => {
+const WeatherPage = () => {
     return (
         <div>
-            EditProfile
+            WeatherPage
         </div>
     )
 };
 
-export default EditProfile;
+export default WeatherPage;
