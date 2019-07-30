@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {NavLink} from "react-router-dom";
+
 import ButtonLogInLink from "../../shared/Buttons/ButtonLogInLink";
 import SignUpForm from "./SignUpForm";
-
 
 class SignUp extends Component {
     submit = values => {

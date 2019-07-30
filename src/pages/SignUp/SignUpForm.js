@@ -5,9 +5,7 @@ import { Form, FormGroup, Label } from 'reactstrap';
 import ButtonSignUp from "../../shared/Buttons/ButtonSignUp";
 import FieldInput from "../../shared/Input/FieldInput";
 
-
 let SignUpForm = ({ handleSubmit}) => {
-
     return (
         <div className="mx-auto w-50">
             <FormGroup>

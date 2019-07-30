@@ -1,11 +1,21 @@
 import React from  'react';
+import WeatherPageForm from "./WeatherPageForm";
+import './WeatherPage.css';
 
-const WeatherPage = () => {
-    return (
-        <div>
-            WeatherPage
-        </div>
-    )
-};
+class WeatherPage extends React.Component {
+
+    render() {
+        return (
+            <div className="mx-auto w-50 mt-5">
+                <div id="title" className="WeatherPage-title">
+                    Autocomplete search
+                </div>
+                <div id="type-selector" className="pac-controls">
+                    <WeatherPageForm />
+                </div>
+            </div>
+        )
+    }
+}
 
 export default WeatherPage;
