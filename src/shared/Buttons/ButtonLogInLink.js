@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 
 const ButtonLogInLink = () => {
     return (
-        <Button type="button" color="warning" className="mt-3">
+        <Button type="button" color="info" className="mt-3">
             LogIn
         </Button>
     )

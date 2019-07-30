@@ -1,12 +1,11 @@
 import React from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label } from 'reactstrap';
 
 import ButtonLogIn from "../../shared/Buttons/ButtonLogIn";
+import FieldInput from "../../shared/Input/FieldInput";
 
-let LogInForm = props => {
-
-    const { handleSubmit } = props;
+let LogInForm = ({ handleSubmit}) => {
 
     return (
         <div className="mx-auto w-50">
@@ -14,15 +13,11 @@ let LogInForm = props => {
             <Form onSubmit={handleSubmit}>
                 <div className="mt-3">
                     <Label htmlFor="email">Email</Label>
-                    <Input placeholder="email">
-                        <Field name="email" component="input" type="email" />
-                    </Input>
+                    <Field name="email" component={FieldInput} type="email" autoFocus={true} placeholder="email"/>
                 </div>
                 <div className="mt-3">
                     <Label htmlFor="password">Password</Label>
-                    <Input placeholder="password">
-                      <Field name="password" component="input" type="password" />
-                    </Input>
+                    <Field name="password" component={FieldInput} type="password" placeholder="password"/>
                 </div>
                 <ButtonLogIn />
             </Form>
@@ -33,7 +28,6 @@ let LogInForm = props => {
 
 LogInForm = reduxForm({
     form: 'LogInForm'
-
 })(LogInForm);
 
 export default LogInForm;
