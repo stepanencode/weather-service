@@ -1,14 +1,19 @@
 import React, { Component } from "react";
+import  { connect } from 'react-redux';
 import {NavLink} from "react-router-dom";
 import ButtonSignUpLink from "../../shared/Buttons/ButtonSignUpLink"
 import LogInForm from "./LogInForm";
+import { submitLogin } from '../../actions/auth.thunk';
 
 
 class LogIn extends Component {
     submit = values => {
-        // print the form values to the console
-        console.log(values)
+        console.log(values);
+        this.props.submitLogin(values);
+
     };
+
+
     render() {
         return (
             <div>
@@ -23,5 +28,8 @@ class LogIn extends Component {
     }
 }
 
-export default LogIn;
 
+
+export default connect(null, {
+    submitLogin
+})(LogIn);

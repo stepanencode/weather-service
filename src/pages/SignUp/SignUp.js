@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 import ButtonLogInLink from "../../shared/Buttons/ButtonLogInLink";
 import SignUpForm from "./SignUpForm";
-import { register } from '../../actions';
+import { submitRegister } from '../../actions/auth.thunk';
 
 
 class SignUp extends Component {
     submit = values => {
         console.log(values);
-        this.props.register(values);
+        this.props.submitRegister(values);
     };
     render() {
         return (
@@ -26,4 +26,4 @@ class SignUp extends Component {
     }
 }
 
-export default connect(null, { register })(SignUp);
+export default connect(null, { submitRegister })(SignUp);

@@ -1,14 +1,15 @@
 import React from 'react';
+import history from '../../history'
 import {
     Collapse,
     Navbar,
     NavbarToggler,
     Nav,
     NavItem,
-    NavLink,
- } from 'reactstrap';
+    NavLink, Button,
+} from 'reactstrap';
 
-import ButtonLogOut from "../Buttons/ButtonLogOut";
+// import ButtonLogOut from "../Buttons/ButtonLogOut";
 
 
 class Header extends React.Component {
@@ -16,6 +17,11 @@ class Header extends React.Component {
 
     componentDidMount() {
         this.toggle();
+    }
+
+    logOut = () => {
+        localStorage.removeItem('token');
+        history.push('/login');
     }
 
     toggle = () => {
@@ -50,7 +56,9 @@ class Header extends React.Component {
                                 <NavLink href="/history_details">History Details</NavLink>
                             </NavItem>
                             <NavItem className="m-auto">
-                                <NavLink href="/"><ButtonLogOut /></NavLink>
+                                <Button color="danger" onClick={this.logOut}>
+                                    LogOut
+                                </Button>
                             </NavItem>
                         </Nav>
                     </Collapse>

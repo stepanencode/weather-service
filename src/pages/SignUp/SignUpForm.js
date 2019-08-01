@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Form, FormGroup, Label } from 'reactstrap';
 
 import ButtonSignUp from "../../shared/Buttons/ButtonSignUp";
-import FieldInput from "../../shared/Input/FieldInput";
+import {FieldInput} from "../../shared/Input/FieldInput";
 
 let SignUpForm = ({ handleSubmit}) => {
     return (
@@ -23,8 +23,8 @@ let SignUpForm = ({ handleSubmit}) => {
                         <Field name="password" component={FieldInput} type="password" placeholder="password"/>
                     </div>
                     <div className="mt-3">
-                        <Label htmlFor="confirm-password">Confirm Password</Label>
-                        <Field name="confirm-password" component={FieldInput} type="password" placeholder="password"/>
+                        <Label htmlFor="confirm_password">Confirm Password</Label>
+                        <Field name="confirm_password" component={FieldInput} type="password" placeholder="password"/>
                     </div>
                     <ButtonSignUp />
                 </Form>

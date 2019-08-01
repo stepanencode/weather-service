@@ -4,6 +4,7 @@ import "./GoogleAutocomplete.css"
 
 const GoogleAutocomplete =  () => {
     return (
+        <div>
         <Autocomplete
             className="GoogleAutocomplete-form"
             onPlaceSelected={(place) => {
@@ -13,6 +14,7 @@ const GoogleAutocomplete =  () => {
 
             types={['(regions)']}
         />
+        </div>
     )
 };
 
