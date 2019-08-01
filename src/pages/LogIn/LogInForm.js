@@ -5,7 +5,9 @@ import { Form, FormGroup, Label } from 'reactstrap';
 import ButtonLogIn from "../../shared/Buttons/ButtonLogIn";
 import FieldInput from "../../shared/Input/FieldInput";
 
-let LogInForm = ({ handleSubmit}) => {
+
+
+let LogInForm = ({ handleSubmit }) => {
 
     return (
         <div className="mx-auto w-50">
@@ -27,7 +29,7 @@ let LogInForm = ({ handleSubmit}) => {
 };
 
 LogInForm = reduxForm({
-    form: 'LogInForm'
+    form: 'LogInForm',
 })(LogInForm);
 
 export default LogInForm;

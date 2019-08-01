@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import LogIn from './pages/LogIn/LogIn';
 import SignUp from './pages/SignUp/SignUp';
@@ -8,12 +8,13 @@ import RequestHistoryList from './pages/RequestHistoryList/RequestHistoryList';
 import RequestHistoryDetails from './pages/RequestHistoryDetails/RequestHistoryDetails';
 import WeatherPage from './pages/WeatherPage/WeatherPage';
 import Header from './shared/Header/Header';
+import history from './history';
 
 
 const App = () => {
     return (
         <div>
-            <BrowserRouter>
+            <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={LogIn}/>
                     <Route path="/sign_up" exact component={SignUp} />
@@ -35,7 +36,7 @@ const App = () => {
                         <Route component={WeatherPage} />
                     </Route>
                 </Switch>
-            </BrowserRouter>
+            </Router>
         </div>
     )
 };

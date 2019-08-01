@@ -1,5 +1,7 @@
 import React from  'react';
+
 import WeatherPageForm from "./WeatherPageForm";
+import WeatherTable from "../../shared/Tables/WeatherTable";
 import './WeatherPage.css';
 
 class WeatherPage extends React.Component {
@@ -12,6 +14,9 @@ class WeatherPage extends React.Component {
                 </div>
                 <div id="type-selector" className="pac-controls">
                     <WeatherPageForm />
+                </div>
+                <div>
+                    <WeatherTable />
                 </div>
             </div>
         )

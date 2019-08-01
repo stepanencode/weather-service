@@ -11,8 +11,12 @@ let SignUpForm = ({ handleSubmit}) => {
             <FormGroup>
                 <Form onSubmit={handleSubmit}>
                     <div className="mt-3">
+                        <Label htmlFor="username">Username</Label>
+                        <Field name="username" component={FieldInput} type="text" autoFocus={true} placeholder="username"/>
+                    </div>
+                    <div className="mt-3">
                         <Label htmlFor="email">Email</Label>
-                        <Field name="email" component={FieldInput} type="email" autoFocus={true} placeholder="email"/>
+                        <Field name="email" component={FieldInput} type="email" placeholder="email"/>
                     </div>
                     <div className="mt-3">
                         <Label htmlFor="password">Password</Label>
@@ -34,4 +38,3 @@ SignUpForm = reduxForm({
 })(SignUpForm);
 
 export default SignUpForm;
-
