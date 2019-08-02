@@ -3,6 +3,8 @@ import {
     searchSuccess,
     searchFailure
 } from "./search.actions";
+
+
 import axios, { weatherApiInstance, OPENWEATHER_API_KEY } from '../api';
 
 const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
@@ -18,9 +20,20 @@ export const submitSearch = (city, latitude, longitude) => async dispatch => {
                 weatherText: item.weather[0].main,
                 weatherIcon: item.weather[0].icon
             }));
+
+
             const token = localStorage.getItem("token");
             const backendResult = await axios.post('/search', {city, items}, {headers: { Authorization: `Bearer ${token}` }});
-            console.log(backendResult);
+            console.log(backendResult, 'backend result');
+            // console.log(weatherResult.data, 'weather result');
+
+
+            // const requestCity = weatherResult.data.city.name;
+            // console.log(requestCity, 'weather result city');
+
+
+            // const createdRequestDate = backendResult.data.data.createdAt;
+            // console.log(createdRequestDate, 'backend result date');
             dispatch(searchSuccess({city, items}));
         } catch (err) {
             dispatch(searchFailure(err));

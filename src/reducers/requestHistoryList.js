@@ -1,23 +1,22 @@
 import {
-    SEARCH_REQUEST,
-    SEARCH_SUCCESS,
-    SEARCH_FAILURE
+    HISTORY_REQUEST,
+    HISTORY_SUCCESS,
+    HISTORY_FAILURE
 } from '../actions/types';
 
 const defaultState = {
-    city: null,
-    items: []
+    city: "",
 };
 
-export default function search(state = defaultState, action) {
+export default function requestHistoryList(state = defaultState, action) {
     switch(action.type) {
-        case SEARCH_REQUEST:
+        case HISTORY_REQUEST:
             return {
                 ...state,
             };
-        case SEARCH_SUCCESS:
+        case HISTORY_SUCCESS:
             return action.payload;
-        case SEARCH_FAILURE:
+        case HISTORY_FAILURE:
             return {
                 ...state,
             };

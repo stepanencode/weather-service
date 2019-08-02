@@ -1,9 +1,10 @@
 import React from  'react';
+import {connect} from "react-redux";
 
 import WeatherPageForm from "./WeatherPageForm";
 import WeatherTable from "../../shared/Tables/WeatherTable";
 import './WeatherPage.css';
-import {connect} from "react-redux";
+
 
 class WeatherPage extends React.Component {
 
@@ -26,7 +27,7 @@ class WeatherPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        items: state.search.items
+        items: state.search.items,
     };
 };
 
