@@ -3,6 +3,7 @@ import React from  'react';
 import WeatherPageForm from "./WeatherPageForm";
 import WeatherTable from "../../shared/Tables/WeatherTable";
 import './WeatherPage.css';
+import {connect} from "react-redux";
 
 class WeatherPage extends React.Component {
 
@@ -16,11 +17,17 @@ class WeatherPage extends React.Component {
                     <WeatherPageForm />
                 </div>
                 <div>
-                    <WeatherTable />
+                    {this.props.items.length > 0 ? <WeatherTable /> : null}
                 </div>
             </div>
         )
     }
 }
 
-export default WeatherPage;
+const mapStateToProps = state => {
+    return {
+        items: state.search.items
+    };
+};
+
+export default connect(mapStateToProps, null)(WeatherPage);

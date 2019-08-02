@@ -1,6 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const WeatherTable = () => {
+const renderItems = (items) => {
+    return items.map(item => {
+        return (
+            <tr>
+                <td className="align-middle">{item.dateString}</td>
+                <td className="align-middle">{item.temperature}</td>
+                <td className="align-middle">{item.weatherText}</td>
+                <td className="align-middle"><img className="w-25" src={`http://openweathermap.org/img/wn/${item.weatherIcon}@2x.png`} alt="weather"/></td>
+            </tr>
+        );
+    });
+};
+
+const WeatherTable = (props) => {
     return (
         <div className="container mt-5 table-responsive-sm">
             <table className="table">
@@ -12,107 +26,16 @@ const WeatherTable = () => {
                     <th> </th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr><tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-                <tr>
-                    <td>07-06-2019</td>
-                    <td>8</td>
-                    <td>Clouds</td>
-                    <td> </td>
-                </tr>
-
-                </tbody>
+                <tbody>{renderItems(props.items)}</tbody>
             </table>
         </div>
     )
 };
 
-export default WeatherTable;
+const mapStateToProps = state => {
+    return {
+        items: state.search.items
+    };
+};
+
+export default connect(mapStateToProps, null)(WeatherTable);

@@ -1,12 +1,7 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom';
-
-
 import { connect } from 'react-redux';
-import history from './history'
 import { checkLogin } from './actions/auth.thunk'
-import LogIn from "./pages/LogIn/LogIn";
-import SignUp from "./pages/SignUp/SignUp";
 
 import EditProfile from './pages/EditProfile/EditProfile';
 import RequestHistoryList from './pages/RequestHistoryList/RequestHistoryList';
@@ -39,7 +34,7 @@ class Protected extends React.Component {
                     <Route component={Header}/>
                     <Route component={RequestHistoryDetails} />
                 </Route>
-                <Route path="/" exact >
+                <Route path="/"  >
                     <Route component={Header}/>
                     <Route component={WeatherPage} />
                 </Route>
