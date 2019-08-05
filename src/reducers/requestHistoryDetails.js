@@ -8,7 +8,7 @@ const defaultState = {
     items: [],
 };
 
-export default function requestHistoryList(state = defaultState, action) {
+export default function requestHistoryDetails(state = defaultState, action) {
     switch(action.type) {
         case HISTORY_DETAILS_REQUEST:
             return {
