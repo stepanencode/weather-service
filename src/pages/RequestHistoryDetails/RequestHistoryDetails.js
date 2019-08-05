@@ -1,25 +1,30 @@
 import React, { Component } from "react";
 import  { connect } from "react-redux";
 
-import { WeatherHistoryTable } from "../../shared/Tables/WeatherTable";
+import WeatherTable from "../../shared/Tables/WeatherTable";
 import { getHistoryDetails } from "../../actions/requestHistoryDetails.thunk";
 
 class RequestHistoryDetails extends Component {
 
     componentDidMount() {
-        console.log(this.props.match.params);
         this.props.getHistoryDetails(this.props.match.params.id);
     }
 
     render() {
         return (
-            <div className="container mt-5">
-                <WeatherHistoryTable />
+            <div className="container mt-5">{this.props.historyDetails.city} {this.props.historyDetails.createdAt}
+                <WeatherTable items={this.props.historyDetails.items} />
             </div>
         )
     }
 }
 
-export default connect(null, {
+const mapStateToProps = state => {
+    return {
+        historyDetails: state.historyDetails
+    };
+};
+
+export default connect(mapStateToProps, {
     getHistoryDetails
 })(RequestHistoryDetails);

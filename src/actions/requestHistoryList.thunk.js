@@ -5,8 +5,8 @@ import {
 } from "./requestHistoryList.actions";
 
 import axios from "../api";
+import { options } from "../constants";
 
-const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
 
 export const getHistory = () => async dispatch => {
     dispatch(historyRequest());

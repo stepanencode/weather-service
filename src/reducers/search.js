@@ -16,7 +16,11 @@ export default function search(state = defaultState, action) {
                 ...state,
             };
         case SEARCH_SUCCESS:
-            return action.payload;
+            return {
+                ...state,
+                city: action.payload.city,
+                items: action.payload.items
+            };
         case SEARCH_FAILURE:
             return {
                 ...state,
@@ -24,5 +28,4 @@ export default function search(state = defaultState, action) {
         default:
             return state;
     }
-
 }

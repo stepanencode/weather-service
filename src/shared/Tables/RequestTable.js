@@ -2,21 +2,7 @@ import React from "react";
 import  { connect } from "react-redux";
 
 import { getHistory } from "../../actions/requestHistoryList.thunk";
-
-const renderItems = (items) => {
-    return items.map(item => {
-        return (
-            <tr>
-                <td>{item.createdAt}</td>
-                <td>
-                    <a href={`/history_details/${item.id}`}>
-                        {item.city}
-                    </a>
-                </td>
-            </tr>
-        );
-    });
-};
+import { RequestTableRow } from "./RequestTableRow";
 
 class RequestTable extends React.Component {
     componentDidMount() {
@@ -32,7 +18,16 @@ class RequestTable extends React.Component {
                     <th>City</th>
                 </tr>
                 </thead>
-                <tbody>{renderItems(this.props.items)}</tbody>
+                <tbody>
+                {
+                    this.props.items.map(item =>
+                        <RequestTableRow
+                            id={item.id}
+                            createdAt={item.createdAt}
+                            city={item.city}
+                        />)
+                }
+                </tbody>
             </table>
         )
     }

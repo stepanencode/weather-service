@@ -5,6 +5,7 @@ import {
 } from "./requestHistoryDetails.actions";
 
 import axios from "../api";
+import { options } from "../constants";
 
 export const getHistoryDetails = (id) => async dispatch => {
     dispatch(historyDetailsRequest());
@@ -16,7 +17,9 @@ export const getHistoryDetails = (id) => async dispatch => {
             weatherText: item.weatherText,
             weatherIcon: item.weatherIcon
         }));
-        dispatch(historyDetailsSuccess({items}));
+        const city = result.data.data.city;
+        const createdAt = new Date(result.data.data.createdAt).toLocaleString("ru-RU", options);
+        dispatch(historyDetailsSuccess({items: items, city: city, createdAt: createdAt}));
     } catch (err) {
         dispatch(historyDetailsFailure(err));
     }

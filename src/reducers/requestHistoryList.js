@@ -15,7 +15,10 @@ export default function requestHistoryList(state = defaultState, action) {
                 ...state,
             };
         case HISTORY_SUCCESS:
-            return action.payload;
+            return {
+                ...state,
+                items: action.payload.items
+            };
         case HISTORY_FAILURE:
             return {
                 ...state,
@@ -23,5 +26,4 @@ export default function requestHistoryList(state = defaultState, action) {
         default:
             return state;
     }
-
 }

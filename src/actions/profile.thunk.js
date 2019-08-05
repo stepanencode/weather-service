@@ -14,7 +14,7 @@ export const getProfile = () => async dispatch => {
     dispatch(getProfileRequest());
     try {
         const result = await axios.get('/api/profile');
-        dispatch(getProfileSuccess(result.data.data));
+        dispatch(getProfileSuccess({user: result.data.data}));
     } catch (err) {
         dispatch(getProfileFailure(err));
     }

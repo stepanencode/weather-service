@@ -6,6 +6,8 @@ import {
 
 const defaultState = {
     items: [],
+    city: "",
+    createdAt: ""
 };
 
 export default function requestHistoryDetails(state = defaultState, action) {
@@ -15,8 +17,12 @@ export default function requestHistoryDetails(state = defaultState, action) {
                 ...state,
             };
         case HISTORY_DETAILS_SUCCESS:
-            console.log(222, action.payload);
-            return action.payload;
+            return {
+                ...state,
+                items: action.payload.items,
+                city: action.payload.city,
+                createdAt: action.payload.createdAt
+            };
         case HISTORY_DETAILS_FAILURE:
             return {
                 ...state,

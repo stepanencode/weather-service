@@ -30,8 +30,9 @@ export default function search(state = defaultState, action) {
             };
         case GET_PROFILE_SUCCESS:
             return {
+                ...state,
                 isEdited: false,
-                user: action.payload
+                user: action.payload.user
             };
         case GET_PROFILE_FAILURE:
             return {
@@ -43,8 +44,9 @@ export default function search(state = defaultState, action) {
             };
         case SUBMIT_PROFILE_SUCCESS:
             return {
+                ...state,
                 isEdited: false,
-                user: action.payload
+                user: action.payload.user
             };
         case SUBMIT_PROFILE_FAILURE:
             return {
