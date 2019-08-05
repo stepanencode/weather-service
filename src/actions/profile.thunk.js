@@ -7,8 +7,8 @@ import {
     submitProfileFailure
 } from "./profile.actions";
 
-import axios from '../api';
-import history from '../history';
+import axios from "../api";
+import history from "../history";
 
 export const getProfile = () => async dispatch => {
     dispatch(getProfileRequest());

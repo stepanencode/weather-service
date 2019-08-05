@@ -1,10 +1,10 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form';
-import { Form, Label, Button } from 'reactstrap';
-import { connect } from 'react-redux'
+import { Field, reduxForm } from "redux-form";
+import { Form, Label, Button } from "reactstrap";
+import { connect } from "react-redux";
 
-import {FieldInput} from "../../shared/Input/FieldInput";
-import {validate} from "../../shared/Input/FieldInput";
+import { FieldInput } from "../../shared/Input/FieldInput";
+import { validate } from "../../shared/Input/FieldInput";
 
 let EditProfileForm = ({ handleSubmit, user}) => {
 

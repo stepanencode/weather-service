@@ -2,7 +2,7 @@ import {
     SEARCH_REQUEST,
     SEARCH_SUCCESS,
     SEARCH_FAILURE,
-} from './types';
+} from "./types";
 
 export const searchRequest = () => ({
     type: SEARCH_REQUEST

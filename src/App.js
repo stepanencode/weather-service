@@ -1,10 +1,10 @@
-import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
 
-import LogIn from './pages/LogIn/LogIn';
-import SignUp from './pages/SignUp/SignUp';
-import history from './history';
-import Protected from './Protected';
+import LogIn from "./pages/LogIn/LogIn";
+import SignUp from "./pages/SignUp/SignUp";
+import history from "./history";
+import Protected from "./Protected";
 
 const App = () => {
     return (

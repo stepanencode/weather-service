@@ -18,4 +18,3 @@ const GoogleAutocompleteForm = styled.div`
 `;
 
 export default GoogleAutocompleteForm;
-

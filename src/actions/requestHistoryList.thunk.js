@@ -4,10 +4,7 @@ import {
     historyFailure
 } from "./requestHistoryList.actions";
 
-import axios from '../api';
-
-
-// import axios, { weatherApiInstance, OPENWEATHER_API_KEY } from '../api';
+import axios from "../api";
 
 const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
 

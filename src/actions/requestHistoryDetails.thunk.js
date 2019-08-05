@@ -4,9 +4,7 @@ import {
     historyDetailsFailure
 } from "./requestHistoryDetails.actions";
 
-import axios from '../api';
-
-// const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
+import axios from "../api";
 
 export const getHistoryDetails = (id) => async dispatch => {
     dispatch(historyDetailsRequest());

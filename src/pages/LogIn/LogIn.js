@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import  { connect } from 'react-redux';
+import  { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-// import ButtonSignUpLink from "../../shared/Buttons/ButtonSignUpLink"
 import LogInForm from "./LogInForm";
-import { submitLogin } from '../../actions/auth.thunk';
+import { submitLogin } from "../../actions/auth.thunk";
 import { Button } from "reactstrap";
 
 class LogIn extends Component {

@@ -2,7 +2,7 @@ import {
     SEARCH_REQUEST,
     SEARCH_SUCCESS,
     SEARCH_FAILURE
-} from '../actions/types';
+} from "../actions/types";
 
 const defaultState = {
     city: null,

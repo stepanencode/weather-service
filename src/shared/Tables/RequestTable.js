@@ -1,7 +1,7 @@
-import React from 'react';
-import  { connect } from 'react-redux';
-import {getHistory} from "../../actions/requestHistoryList.thunk";
+import React from "react";
+import  { connect } from "react-redux";
 
+import { getHistory } from "../../actions/requestHistoryList.thunk";
 
 const renderItems = (items) => {
     return items.map(item => {
@@ -44,6 +44,4 @@ const mapStateToProps = state => {
     };
 };
 
-
-// export default RequestTable;
 export default connect(mapStateToProps, { getHistory })(RequestTable);

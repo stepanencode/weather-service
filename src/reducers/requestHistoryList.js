@@ -2,7 +2,7 @@ import {
     HISTORY_REQUEST,
     HISTORY_SUCCESS,
     HISTORY_FAILURE
-} from '../actions/types';
+} from "../actions/types";
 
 const defaultState = {
     items: [],

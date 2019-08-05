@@ -1,8 +1,8 @@
-import React from  'react';
-import { Field, reduxForm } from 'redux-form';
-import { Form,  Label } from 'reactstrap';
+import React from  "react";
+import { Field, reduxForm } from "redux-form";
+import { Form,  Label } from "reactstrap";
 
-import GoogleAutocomplete from "../../shared/GoogleAutocomplete/GoogleAutocomplete"
+import GoogleAutocomplete from "../../shared/GoogleAutocomplete/GoogleAutocomplete";
 
 let WeatherPageForm = () => {
 

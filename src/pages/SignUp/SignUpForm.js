@@ -1,8 +1,7 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form';
-import { Button, Form, FormGroup, Label } from 'reactstrap';
+import { Field, reduxForm } from "redux-form";
+import { Button, Form, FormGroup, Label } from "reactstrap";
 
-// import ButtonSignUp from "../../shared/Buttons/ButtonSignUp";
 import {FieldInput} from "../../shared/Input/FieldInput";
 import {validate} from "../../shared/Input/FieldInput";
 

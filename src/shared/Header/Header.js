@@ -1,5 +1,6 @@
-import React from 'react';
-import history from '../../history'
+import React, { Component } from "react";
+
+import history from "../../history";
 import {
     Collapse,
     Navbar,
@@ -8,12 +9,9 @@ import {
     NavItem,
     NavLink,
     Button,
-} from 'reactstrap';
+} from "reactstrap";
 
-// import ButtonLogOut from "../Buttons/ButtonLogOut";
-
-
-class Header extends React.Component {
+class Header extends Component {
 
     state = { isOpen: false  };
 
@@ -83,4 +81,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-

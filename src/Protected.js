@@ -1,13 +1,13 @@
-import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
-import { checkLogin } from './actions/auth.thunk'
-import EditProfile from './pages/EditProfile/EditProfile';
-import RequestHistoryList from './pages/RequestHistoryList/RequestHistoryList';
-import RequestHistoryDetails from './pages/RequestHistoryDetails/RequestHistoryDetails';
-import WeatherPage from './pages/WeatherPage/WeatherPage';
-import Header from './shared/Header/Header';
+import { checkLogin } from "./actions/auth.thunk";
+import EditProfile from "./pages/EditProfile/EditProfile";
+import RequestHistoryList from "./pages/RequestHistoryList/RequestHistoryList";
+import RequestHistoryDetails from "./pages/RequestHistoryDetails/RequestHistoryDetails";
+import WeatherPage from "./pages/WeatherPage/WeatherPage";
+import Header from "./shared/Header/Header";
 
 class Protected extends React.Component {
 

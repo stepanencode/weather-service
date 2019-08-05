@@ -2,7 +2,7 @@ import {
     HISTORY_DETAILS_REQUEST,
     HISTORY_DETAILS_SUCCESS,
     HISTORY_DETAILS_FAILURE,
-} from './types';
+} from "./types";
 
 export const historyDetailsRequest = () => ({
     type: HISTORY_DETAILS_REQUEST

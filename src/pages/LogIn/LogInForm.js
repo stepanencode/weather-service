@@ -1,6 +1,6 @@
 import React from "react";
-import { Field, reduxForm } from 'redux-form';
-import { Form, FormGroup, Label, Button } from 'reactstrap';
+import { Field, reduxForm } from "redux-form";
+import { Form, FormGroup, Label, Button } from "reactstrap";
 
 import { FieldInput } from "../../shared/Input/FieldInput";
 
@@ -52,5 +52,3 @@ LogInForm = reduxForm({
 })(LogInForm);
 
 export default LogInForm;
-
-

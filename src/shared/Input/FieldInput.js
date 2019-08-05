@@ -27,4 +27,3 @@ export const FieldInput =  ({ input, type, placeholder, meta: { touched, error }
         </div>
     )
 };
-

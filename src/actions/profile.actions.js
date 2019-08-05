@@ -6,7 +6,7 @@ import {
     SUBMIT_PROFILE_SUCCESS,
     SUBMIT_PROFILE_FAILURE,
     TOGGLE_PROFILE_EDIT
-} from './types';
+} from "./types";
 
 export const toggleProfileEdit = () => ({
     type: TOGGLE_PROFILE_EDIT

@@ -1,8 +1,8 @@
-import Autocomplete from 'react-google-autocomplete';
+import Autocomplete from "react-google-autocomplete";
 import React from "react";
 import  { connect } from 'react-redux';
 
-import {submitSearch} from "../../actions/search.thunk";
+import { submitSearch } from "../../actions/search.thunk";
 import GoogleAutocompleteForm from "./styles";
 
 const GoogleAutocomplete = (props) => {
