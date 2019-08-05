@@ -1,32 +1,69 @@
 import React from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Form, FormGroup, Label } from 'reactstrap';
+import { Button, Form, FormGroup, Label } from 'reactstrap';
 
-import ButtonSignUp from "../../shared/Buttons/ButtonSignUp";
+// import ButtonSignUp from "../../shared/Buttons/ButtonSignUp";
 import {FieldInput} from "../../shared/Input/FieldInput";
+import {validate} from "../../shared/Input/FieldInput";
 
 let SignUpForm = ({ handleSubmit}) => {
+
     return (
         <div className="mx-auto w-50">
             <FormGroup>
                 <Form onSubmit={handleSubmit}>
                     <div className="mt-3">
-                        <Label htmlFor="username">Username</Label>
-                        <Field name="username" component={FieldInput} type="text" autoFocus={true} placeholder="username"/>
+                        <Label htmlFor="username">
+                            Username
+                        </Label>
+                        <Field
+                            name="username"
+                            component={FieldInput}
+                            type="text"
+                            autoFocus={true}
+                            placeholder="username"
+                        />
                     </div>
                     <div className="mt-3">
-                        <Label htmlFor="email">Email</Label>
-                        <Field name="email" component={FieldInput} type="email" placeholder="email"/>
+                        <Label htmlFor="email">
+                            Email
+                        </Label>
+                        <Field
+                            name="email"
+                            component={FieldInput}
+                            type="email"
+                            placeholder="email"
+                        />
                     </div>
                     <div className="mt-3">
-                        <Label htmlFor="password">Password</Label>
-                        <Field name="password" component={FieldInput} type="password" placeholder="password"/>
+                        <Label htmlFor="password">
+                            Password
+                        </Label>
+                        <Field
+                            name="password"
+                            component={FieldInput}
+                            type="password"
+                            placeholder="password"
+                        />
                     </div>
                     <div className="mt-3">
-                        <Label htmlFor="confirm_password">Confirm Password</Label>
-                        <Field name="confirm_password" component={FieldInput} type="password" placeholder="password"/>
+                        <Label htmlFor="confirm_password">
+                            Confirm Password
+                        </Label>
+                        <Field
+                            name="confirm_password"
+                            component={FieldInput}
+                            type="password"
+                            placeholder="password"
+                        />
                     </div>
-                    <ButtonSignUp />
+                    <Button
+                        type="submit"
+                        color="warning"
+                        className="mt-3"
+                    >
+                        Register
+                    </Button>
                 </Form>
             </FormGroup>
         </div>
@@ -34,7 +71,8 @@ let SignUpForm = ({ handleSubmit}) => {
 };
 
 SignUpForm = reduxForm({
-    form: 'SignUpForm'
+    form: 'SignUpForm',
+    validate
 })(SignUpForm);
 
 export default SignUpForm;

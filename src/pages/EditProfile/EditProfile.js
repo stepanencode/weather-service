@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import  { connect } from 'react-redux';
-import {Button} from 'reactstrap';
+import { Button } from 'reactstrap';
 
-import {toggleProfileEdit} from "../../actions/profile.actions";
-import {getProfile, submitProfile} from "../../actions/profile.thunk";
+import { toggleProfileEdit } from "../../actions/profile.actions";
+import { getProfile, submitProfile } from "../../actions/profile.thunk";
 import EditProfileForm from "./EditProfileForm"
 
 class EditProfile extends Component {
+
     componentDidMount() {
         this.props.getProfile();
     }
@@ -47,4 +48,9 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, { toggleProfileEdit, getProfile, submitProfile })(EditProfile);
+export default connect(
+    mapStateToProps, {
+        toggleProfileEdit,
+        getProfile,
+        submitProfile
+    })(EditProfile);

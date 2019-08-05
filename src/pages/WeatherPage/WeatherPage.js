@@ -1,19 +1,18 @@
-import React from  'react';
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import WeatherPageForm from "./WeatherPageForm";
 import { WeatherSearchTable } from "../../shared/Tables/WeatherTable";
-import './WeatherPage.css';
+import Title from "./styles";
 
-
-class WeatherPage extends React.Component {
+class WeatherPage extends Component {
 
     render() {
         return (
             <div className="mx-auto w-50 mt-5">
-                <div id="title" className="WeatherPage-title">
+                <Title id="title" >
                     Autocomplete search
-                </div>
+                </Title>
                 <div id="type-selector" className="pac-controls">
                     <WeatherPageForm />
                 </div>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { checkLogin } from './actions/auth.thunk'
 
+import { checkLogin } from './actions/auth.thunk'
 import EditProfile from './pages/EditProfile/EditProfile';
 import RequestHistoryList from './pages/RequestHistoryList/RequestHistoryList';
 import RequestHistoryDetails from './pages/RequestHistoryDetails/RequestHistoryDetails';
@@ -19,6 +19,7 @@ class Protected extends React.Component {
         const { authenticated, checkloginRequestCompleted } = this.props;
         if(!authenticated && !checkloginRequestCompleted) return null;
         if(!authenticated && checkloginRequestCompleted) return <Redirect to={"/login"}/>;
+
         return (
             <Switch>
                 <Route path="/edit_profile" exact >

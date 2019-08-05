@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import  { connect } from 'react-redux';
+
 import { WeatherHistoryTable } from "../../shared/Tables/WeatherTable";
 import { getHistoryDetails } from "../../actions/requestHistoryDetails.thunk";
 
@@ -12,14 +13,11 @@ class RequestHistoryDetails extends Component {
 
     render() {
         return (
-            <div>
-                <div className="container mt-5">
-                </div>
+            <div className="container mt-5">
                 <WeatherHistoryTable />
             </div>
         )
     }
-
 }
 
 export default connect(null, {

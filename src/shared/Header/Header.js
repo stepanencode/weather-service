@@ -6,13 +6,15 @@ import {
     NavbarToggler,
     Nav,
     NavItem,
-    NavLink, Button,
+    NavLink,
+    Button,
 } from 'reactstrap';
 
 // import ButtonLogOut from "../Buttons/ButtonLogOut";
 
 
 class Header extends React.Component {
+
     state = { isOpen: false  };
 
     componentDidMount() {
@@ -22,7 +24,7 @@ class Header extends React.Component {
     logOut = () => {
         localStorage.removeItem('token');
         history.push('/login');
-    }
+    };
 
     toggle = () => {
             this.setState({
@@ -38,22 +40,34 @@ class Header extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar >
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/">LogIn</NavLink>
+                                <NavLink href="/">
+                                    LogIn
+                                </NavLink>
                             </NavItem>
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/sign_up">SignUp</NavLink>
+                                <NavLink href="/sign_up">
+                                    SignUp
+                                </NavLink>
                             </NavItem>
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/edit_profile">Edit Profile</NavLink>
+                                <NavLink href="/edit_profile">
+                                    Edit Profile
+                                </NavLink>
                             </NavItem>
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/weather">Weather Page</NavLink>
+                                <NavLink href="/weather">
+                                    Weather Page
+                                </NavLink>
                             </NavItem>
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/history_list">History List</NavLink>
+                                <NavLink href="/history_list">
+                                    History List
+                                </NavLink>
                             </NavItem>
                             <NavItem className="mt-2 m-auto">
-                                <NavLink href="/history_details">History Details</NavLink>
+                                <NavLink href="/history_details">
+                                    History Details
+                                </NavLink>
                             </NavItem>
                             <NavItem className="m-auto">
                                 <Button color="danger" onClick={this.logOut}>

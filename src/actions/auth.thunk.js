@@ -21,7 +21,7 @@ export const submitLogin = (data) => async dispatch => {
             // localstorage
             //redirect
             localStorage.setItem('token', result.data.token);
-            history.push('/weather');
+            history.push('/');
             dispatch(loginSuccess(result));
         } catch (err) {
             dispatch(loginFailure(err));
