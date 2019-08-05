@@ -2,7 +2,7 @@ import React from  'react';
 import {connect} from "react-redux";
 
 import WeatherPageForm from "./WeatherPageForm";
-import WeatherTable from "../../shared/Tables/WeatherTable";
+import { WeatherSearchTable } from "../../shared/Tables/WeatherTable";
 import './WeatherPage.css';
 
 
@@ -18,7 +18,7 @@ class WeatherPage extends React.Component {
                     <WeatherPageForm />
                 </div>
                 <div>
-                    {this.props.items.length > 0 ? <WeatherTable /> : null}
+                    {this.props.items.length > 0 ? <WeatherSearchTable /> : null}
                 </div>
             </div>
         )

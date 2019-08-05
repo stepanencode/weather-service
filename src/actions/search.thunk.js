@@ -22,8 +22,8 @@ export const submitSearch = (city, latitude, longitude) => async dispatch => {
             }));
 
 
-            const token = localStorage.getItem("token");
-            const backendResult = await axios.post('/search', {city, items}, {headers: { Authorization: `Bearer ${token}` }});
+            // const token = localStorage.getItem("token");
+            const backendResult = await axios.post('/api/search', {city, items}, );
             console.log(backendResult, 'backend result');
             // console.log(weatherResult.data, 'weather result');
 

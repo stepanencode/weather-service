@@ -9,7 +9,6 @@ import RequestHistoryDetails from './pages/RequestHistoryDetails/RequestHistoryD
 import WeatherPage from './pages/WeatherPage/WeatherPage';
 import Header from './shared/Header/Header';
 
-
 class Protected extends React.Component {
 
     componentDidMount() {
@@ -30,7 +29,7 @@ class Protected extends React.Component {
                     <Route component={Header}/>
                     <Route component={RequestHistoryList} />
                 </Route>
-                <Route path="/history_details" exact >
+                <Route path="/history_details/:id" exact >
                     <Route component={Header}/>
                     <Route component={RequestHistoryDetails} />
                 </Route>

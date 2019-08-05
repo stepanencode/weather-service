@@ -1,7 +1,7 @@
 import {
-    HISTORY_REQUEST,
-    HISTORY_SUCCESS,
-    HISTORY_FAILURE
+    HISTORY_DETAILS_REQUEST,
+    HISTORY_DETAILS_SUCCESS,
+    HISTORY_DETAILS_FAILURE
 } from '../actions/types';
 
 const defaultState = {
@@ -10,18 +10,18 @@ const defaultState = {
 
 export default function requestHistoryList(state = defaultState, action) {
     switch(action.type) {
-        case HISTORY_REQUEST:
+        case HISTORY_DETAILS_REQUEST:
             return {
                 ...state,
             };
-        case HISTORY_SUCCESS:
+        case HISTORY_DETAILS_SUCCESS:
+            console.log(222, action.payload);
             return action.payload;
-        case HISTORY_FAILURE:
+        case HISTORY_DETAILS_FAILURE:
             return {
                 ...state,
             };
         default:
             return state;
     }
-
 }

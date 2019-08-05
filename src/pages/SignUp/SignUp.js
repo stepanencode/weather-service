@@ -12,6 +12,7 @@ class SignUp extends Component {
         console.log(values);
         this.props.submitRegister(values);
     };
+
     render() {
         return (
             <div>

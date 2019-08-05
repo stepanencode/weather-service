@@ -1,16 +1,27 @@
-import React from  'react';
-import WeatherTable from "../../shared/Tables/WeatherTable";
+import React, { Component } from "react";
+import  { connect } from 'react-redux';
+import { WeatherHistoryTable } from "../../shared/Tables/WeatherTable";
+import { getHistoryDetails } from "../../actions/requestHistoryDetails.thunk";
 
-const RequestHistoryDetails = () => {
-    return (
-        <div>
-            <div className="container mt-5">
-                City <br/>
-                Date
+class RequestHistoryDetails extends Component {
+
+    componentDidMount() {
+        console.log(this.props.match.params);
+        this.props.getHistoryDetails(this.props.match.params.id);
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="container mt-5">
+                </div>
+                <WeatherHistoryTable />
             </div>
-            <WeatherTable />
-        </div>
-    )
-};
+        )
+    }
 
-export default RequestHistoryDetails;
+}
+
+export default connect(null, {
+    getHistoryDetails
+})(RequestHistoryDetails);

@@ -9,21 +9,18 @@ import axios from '../api';
 
 // import axios, { weatherApiInstance, OPENWEATHER_API_KEY } from '../api';
 
-// const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
+const options = { day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric',  minute: 'numeric' };
 
-
-export const getHistory = (city, timestamps) => async dispatch => {
+export const getHistory = () => async dispatch => {
     dispatch(historyRequest());
     try {
-        const token = localStorage.getItem("token");
-        const historyResult = await axios.get('/search', {city, timestamps}, {headers: { Authorization: `Bearer ${token}` }});
-        console.log(historyResult, 'history');
-
-
-
-
-
-        dispatch(historySuccess({city, timestamps}));
+        const historyResult = await axios.get('/api/search');
+        const historyItems = historyResult.data.data.map(item => ({
+            city: item.city,
+            createdAt: new Date(item.createdAt).toLocaleString("ru-RU", options),
+            id: item._id
+        }));
+        dispatch(historySuccess({items: historyItems}));
     } catch (err) {
         dispatch(historyFailure(err));
     }

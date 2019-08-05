@@ -46,8 +46,7 @@ export const submitRegister = (data) => async dispatch => {
 export const checkLogin = () => async dispatch => {
     dispatch(checkLoginRequest());
     try {
-        const result = await axios.get('/auth/checkLogin');
-
+        const result = await axios.get('/api/checkLogin');
         dispatch(checkLoginSuccess(result));
     } catch (err) {
         dispatch(checkLoginFailure(err));

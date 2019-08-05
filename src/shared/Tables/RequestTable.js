@@ -3,6 +3,20 @@ import  { connect } from 'react-redux';
 import {getHistory} from "../../actions/requestHistoryList.thunk";
 
 
+const renderItems = (items) => {
+    return items.map(item => {
+        return (
+            <tr>
+                <td>{item.createdAt}</td>
+                <td>
+                    <a href={`/history_details/${item.id}`}>
+                        {item.city}
+                    </a>
+                </td>
+            </tr>
+        );
+    });
+};
 
 class RequestTable extends React.Component {
     componentDidMount() {
@@ -10,32 +24,23 @@ class RequestTable extends React.Component {
     }
 
     render () {
-    return (
-        <table className="table">
-            <thead >
-            <tr>
-                <th>Date</th>
-                <th>City</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>07-06-2019</td>
-                <td>
-                    <a href={"/history_details/"}>
-                        {this.props.city}
-                    </a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    )
-   }
+        return (
+            <table className="table">
+                <thead >
+                <tr>
+                    <th>Date</th>
+                    <th>City</th>
+                </tr>
+                </thead>
+                <tbody>{renderItems(this.props.items)}</tbody>
+            </table>
+        )
+    }
 }
 
 const mapStateToProps = state => {
     return {
-        city: state.search.city,
+        items: state.history.items,
     };
 };
 

@@ -32,10 +32,18 @@ const WeatherTable = (props) => {
     )
 };
 
-const mapStateToProps = state => {
+const mapStateToPropsSearch = state => {
     return {
         items: state.search.items
     };
 };
 
-export default connect(mapStateToProps, null)(WeatherTable);
+export const WeatherSearchTable = connect(mapStateToPropsSearch, null)(WeatherTable);
+
+const mapStateToPropsHistory = state => {
+    return {
+        items: state.historyDetails.items
+    };
+};
+
+export const WeatherHistoryTable = connect(mapStateToPropsHistory, null)(WeatherTable);
